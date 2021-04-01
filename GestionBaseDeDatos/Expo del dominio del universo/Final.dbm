@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+CAUTION: Do not modify this file unless you know what you are doing.
+         Unexpected results may occur if the code is changed deliberately.
+-->
+<dbmodel pgmodeler-ver="0.9.2" last-position="0,0" last-zoom="1" max-obj-count="8"
+	 default-schema="public" default-owner="postgres">
+<database name="new_database" is-template="false" allow-conns="true">
+</database>
+
+<schema name="public" layer="0" fill-color="#e1e1e1" sql-disabled="true">
+</schema>
+
+<table name="USUARIO" layer="0" collapse-mode="2" max-obj-count="8">
+	<schema name="public"/>
+	<role name="postgres"/>
+	<position x="38" y="15"/>
+	<column name="CLI_CODIGO" not-null="true">
+		<type name="integer" length="0"/>
+	</column>
+	<column name="CLI_NOMBRE">
+		<type name="integer" length="0"/>
+	</column>
+	<column name="CLI_APELLIDOS">
+		<type name="integer" length="0"/>
+	</column>
+	<column name="CLI_CEDULA">
+		<type name="integer" length="0"/>
+	</column>
+	<column name="CLI_DIRECCION">
+		<type name="integer" length="0"/>
+	</column>
+	<column name="CLI_FECHA_NACIMIENTO">
+		<type name="varchar" length="30"/>
+	</column>
+	<constraint name="USUARIOS_pk" type="pk-constr" table="public.&quot;USUARIO&quot;">
+		<columns names="CLI_CODIGO" ref-type="src-columns"/>
+	</constraint>
+
+	<customidxs object-type="column">
+		<object name="BIN_NUMERO_BINGO" index="6"/>
+	</customidxs>
+
+	<customidxs object-type="constraint">
+		<object name="BINGO_fk" index="1"/>
+	</customidxs>
+</table>
+
+<table name="ADMINISTRADOR" layer="0" collapse-mode="2" max-obj-count="6">
+	<schema name="public"/>
+	<role name="postgres"/>
+	<position x="939" y="388"/>
+	<column name="ADMI_ID" not-null="true">
+		<type name="integer" length="0"/>
+	</column>
+	<column name="ADMI_CEDULA">
+		<type name="integer" length="0"/>
+	</column>
+	<column name="ADMI_NOMBRE">
+		<type name="varchar" length="20"/>
+	</column>
+	<column name="ADMI_APELLIDO">
+		<type name="varchar" length="20"/>
+	</column>
+	<column name="ADMI_CELULAR">
+		<type name="integer" length="0"/>
+	</column>
+	<constraint name="ADMINISTRADOR_pk" type="pk-constr" table="public.&quot;ADMINISTRADOR&quot;">
+		<columns names="ADMI_ID" ref-type="src-columns"/>
+	</constraint>
+</table>
+
+<table name="INSCRIPCION" layer="0" collapse-mode="2" max-obj-count="6">
+	<schema name="public"/>
+	<role name="postgres"/>
+	<position x="491" y="377"/>
+	<column name="INS_CODIGO" not-null="true">
+		<type name="integer" length="0"/>
+	</column>
+	<column name="INC_DESC">
+		<type name="float" length="0"/>
+	</column>
+	<column name="INC_FECHA">
+		<type name="date" length="0"/>
+	</column>
+	<constraint name="INSCRIPCION_pk" type="pk-constr" table="public.&quot;INSCRIPCION&quot;">
+		<columns names="INS_CODIGO" ref-type="src-columns"/>
+	</constraint>
+
+	<customidxs object-type="column">
+		<object name="ADMI_ID_ADMINISTRADOR" index="2"/>
+		<object name="CLI_CODIGO_USUARIO" index="3"/>
+	</customidxs>
+
+	<customidxs object-type="constraint">
+		<object name="ADMINISTRADOR_fk" index="0"/>
+		<object name="USUARIO_fk" index="1"/>
+	</customidxs>
+</table>
+
+<relationship name="ADMINISTRADOR_has_many_INSCRIPCION" type="rel1n" layer="0"
+	 src-col-pattern="{sc}_{st}"
+	 pk-pattern="{dt}_pk" uq-pattern="{dt}_uq"
+	 src-fk-pattern="{st}_fk"
+	 custom-color="#007d00"
+	 src-table="public.&quot;ADMINISTRADOR&quot;"
+	 dst-table="public.&quot;INSCRIPCION&quot;"
+	 src-required="true" dst-required="false">
+	<label ref-type="name-label">
+		<position x="53.9309" y="57.3286"/>
+	</label>
+</relationship>
+
+<table name="PAGO" layer="0" collapse-mode="2" max-obj-count="3">
+	<schema name="public"/>
+	<role name="postgres"/>
+	<position x="27" y="297"/>
+	<column name="PAG_CODIGO" not-null="true">
+		<type name="integer" length="0"/>
+	</column>
+	<column name="PAG_REALIZADO">
+		<type name="float" length="0"/>
+	</column>
+	<constraint name="PAGOS_pk" type="pk-constr" table="public.&quot;PAGO&quot;">
+		<columns names="PAG_CODIGO" ref-type="src-columns"/>
+	</constraint>
+</table>
+
+<table name="BINGO" layer="0" collapse-mode="2" max-obj-count="3">
+	<schema name="public"/>
+	<role name="postgres"/>
+	<position x="921" y="13"/>
+	<column name="BIN_NUMERO" not-null="true">
+		<type name="integer" length="0"/>
+	</column>
+	<column name="BIN_DATE">
+		<type name="date" length="0"/>
+	</column>
+	<constraint name="BINGOS_pk" type="pk-constr" table="public.&quot;BINGO&quot;">
+		<columns names="BIN_NUMERO" ref-type="src-columns"/>
+	</constraint>
+
+	<customidxs object-type="column">
+		<object name="ADMI_ID_ADMINISTRADOR" index="2"/>
+	</customidxs>
+
+	<customidxs object-type="constraint">
+		<object name="ADMINISTRADOR_fk" index="1"/>
+	</customidxs>
+</table>
+
+<relationship name="ADMINISTRADOR_has_many_BINGOS" type="rel1n" layer="0"
+	 src-col-pattern="{sc}_{st}"
+	 pk-pattern="{dt}_pk" uq-pattern="{dt}_uq"
+	 src-fk-pattern="{st}_fk"
+	 custom-color="#af0ad8"
+	 src-table="public.&quot;ADMINISTRADOR&quot;"
+	 dst-table="public.&quot;BINGO&quot;"
+	 src-required="true" dst-required="false">
+	<label ref-type="name-label">
+		<position x="7.58724" y="-19.4857"/>
+	</label>
+</relationship>
+
+<relationship name="BINGOS_has_many_USUARIOS" type="rel1n" layer="0"
+	 src-col-pattern="{sc}_{st}"
+	 pk-pattern="{dt}_pk" uq-pattern="{dt}_uq"
+	 src-fk-pattern="{st}_fk"
+	 custom-color="#133343"
+	 src-table="public.&quot;BINGO&quot;"
+	 dst-table="public.&quot;USUARIO&quot;"
+	 src-required="true" dst-required="false">
+	<label ref-type="name-label">
+		<position x="26.4309" y="-29.4143"/>
+	</label>
+</relationship>
+
+<relationship name="USUARIOS_has_many_INSCRIPCION" type="rel1n" layer="0"
+	 src-col-pattern="{sc}_{st}"
+	 pk-pattern="{dt}_pk" uq-pattern="{dt}_uq"
+	 src-fk-pattern="{st}_fk"
+	 custom-color="#00007f"
+	 src-table="public.&quot;USUARIO&quot;"
+	 dst-table="public.&quot;INSCRIPCION&quot;"
+	 src-required="true" dst-required="false">
+	<label ref-type="name-label">
+		<position x="-63.2104" y="-37.8857"/>
+	</label>
+</relationship>
+
+<relationship name="INSCRIPCION_has_many_PAGO" type="rel1n" layer="0"
+	 src-col-pattern="{sc}_{st}"
+	 pk-pattern="{dt}_pk" uq-pattern="{dt}_uq"
+	 src-fk-pattern="{st}_fk"
+	 custom-color="#aa007f"
+	 src-table="public.&quot;INSCRIPCION&quot;"
+	 dst-table="public.&quot;PAGO&quot;"
+	 src-required="true" dst-required="false">
+	<label ref-type="name-label">
+		<position x="-83.0691" y="6.4657"/>
+	</label>
+</relationship>
+
+<table name="GANADORES" layer="0" collapse-mode="2" max-obj-count="4">
+	<schema name="public"/>
+	<role name="postgres"/>
+	<position x="535" y="177"/>
+	<column name="GAN_CODIGO" not-null="true">
+		<type name="integer" length="0"/>
+	</column>
+	<column name="GAN_CANTIDAD_GANADOS">
+		<type name="integer" length="0"/>
+	</column>
+	<constraint name="GANADORES_pk" type="pk-constr" table="public.&quot;GANADORES&quot;">
+		<columns names="GAN_CODIGO" ref-type="src-columns"/>
+	</constraint>
+</table>
+
+<relationship name="USUARIO_has_many_GANADORES" type="rel1n" layer="0"
+	 src-col-pattern="{sc}_{st}"
+	 pk-pattern="{dt}_pk" uq-pattern="{dt}_uq"
+	 src-fk-pattern="{st}_fk"
+	 custom-color="#aa0000"
+	 src-table="public.&quot;USUARIO&quot;"
+	 dst-table="public.&quot;GANADORES&quot;"
+	 src-required="true" dst-required="false">
+	<label ref-type="name-label">
+		<position x="5.93092" y="-17.9872"/>
+	</label>
+</relationship>
+
+<relationship name="BINGO_has_many_GANADORES" type="rel1n" layer="0"
+	 src-col-pattern="{sc}_{st}"
+	 pk-pattern="{dt}_pk" uq-pattern="{dt}_uq"
+	 src-fk-pattern="{st}_fk"
+	 custom-color="#005353"
+	 src-table="public.&quot;BINGO&quot;"
+	 dst-table="public.&quot;GANADORES&quot;"
+	 src-required="true" dst-required="false">
+	<label ref-type="name-label">
+		<position x="60.0458" y="-20.2724"/>
+	</label>
+</relationship>
+
+</dbmodel>
