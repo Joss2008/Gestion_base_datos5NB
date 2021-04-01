@@ -1,0 +1,30 @@
+La cadena de Bingos online ah solicitado un sistema
+informatico para Bingos el cual se ha nombrado 
+"BINGOMAX" utilizado para la gestion  de su negocio
+este modelo de datos debe contener lo siguiente:
+
+La cadena cuenta con usuarios de los cuales se debe 
+obtener el codigo, los nombres, apellidos, cedula, 
+direccion, fecha de nacimiento, fecha de inscripcion
+fecha de pago. Esta tambien cuenta con el administrador
+del cual se debe conocer nombre, celular, cedula, 
+El administrador debe generar un descuento a las 3 
+primeras personas inscritas al mes teniendo en cuenta que 
+la inscripcion cuesta $40.
+
+El modelado de datos aparte de realizar lo anterior debe 
+realizar las siguientes consultas:
+- ¿Cuales son los usuarios que llevan mas de dos meses inscritos?
+- ¿Que usuario lleva mas tiempo en el juego ?
+- ¿Cual es la cantidad de usuarios retirados?
+- ¿Cual es la cantidad de usuarios inscritos?
+- ¿Lista de las personas que tienen pagos atrasados 
+- 2do parcial Un trigger que impida realizar una nueva inscripcion 
+a una persona retirada 
+- 2do Parcial Un trigger que no permita inscribirse a personas 
+menores de 20 años 
+- 2do Parcial Un cursor que muestre las personas inscirtas y la 
+fecha en la que se inscribieron
+- 2do Parcial reporte en ireport usando graficas estadisticos a 
+su base de datos
+
