@@ -1,0 +1,337 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+CAUTION: Do not modify this file unless you know what you are doing.
+         Unexpected results may occur if the code is changed deliberately.
+-->
+<dbmodel pgmodeler-ver="0.9.2" last-position="0,0" last-zoom="1" max-obj-count="13"
+	 default-schema="public" default-owner="postgres">
+<database name="new_database" is-template="false" allow-conns="true">
+</database>
+
+<schema name="public" layer="0" fill-color="#e1e1e1" sql-disabled="true">
+</schema>
+
+<table name="USUARIO" layer="0" collapse-mode="2" max-obj-count="7">
+	<schema name="public"/>
+	<role name="postgres"/>
+	<position x="800" y="6"/>
+	<column name="USU_CEDULA" not-null="true">
+		<type name="integer" length="0"/>
+	</column>
+	<column name="USU_NOMBRE">
+		<type name="varchar" length="50"/>
+	</column>
+	<column name="USU_APELLIDO">
+		<type name="varchar" length="50"/>
+	</column>
+	<column name="USU_DIRECCION">
+		<type name="varchar" length="50"/>
+	</column>
+	<column name="USU_CELULAR">
+		<type name="integer" length="0"/>
+	</column>
+	<constraint name="USUARIOS_pk" type="pk-constr" table="public.&quot;USUARIO&quot;">
+		<columns names="USU_CEDULA" ref-type="src-columns"/>
+	</constraint>
+</table>
+
+<table name="AREA_REGISTRO" layer="0" collapse-mode="2" max-obj-count="3">
+	<schema name="public"/>
+	<role name="postgres"/>
+	<position x="21" y="217"/>
+	<column name="TIPO_CODIGO" not-null="true">
+		<type name="integer" length="0"/>
+	</column>
+	<column name="TIPO_DETALLE">
+		<type name="varchar" length="50"/>
+	</column>
+	<constraint name="TIPO_REGISTRO_pk" type="pk-constr" table="public.&quot;AREA_REGISTRO&quot;">
+		<columns names="TIPO_CODIGO" ref-type="src-columns"/>
+	</constraint>
+</table>
+
+<table name="EMPLEADO" layer="0" collapse-mode="2" max-obj-count="9">
+	<schema name="public"/>
+	<role name="postgres"/>
+	<position x="14" y="378"/>
+	<column name="EMP_CEDULA" not-null="true">
+		<type name="integer" length="0"/>
+	</column>
+	<column name="EMP_NOMBRE">
+		<type name="varchar" length="50"/>
+	</column>
+	<column name="EMP_APELLIDO">
+		<type name="varchar" length="50"/>
+	</column>
+	<column name="EMP_EMAIL">
+		<type name="varchar" length="50"/>
+	</column>
+	<column name="EMP_DIRECCION">
+		<type name="varchar" length="50"/>
+	</column>
+	<column name="EMP_CELULAR">
+		<type name="integer" length="0"/>
+	</column>
+	<constraint name="EMPLEADO_pk" type="pk-constr" table="public.&quot;EMPLEADO&quot;">
+		<columns names="EMP_CEDULA" ref-type="src-columns"/>
+	</constraint>
+</table>
+
+<table name="ADMINISTRADOR" layer="0" collapse-mode="2" max-obj-count="3">
+	<schema name="public"/>
+	<role name="postgres"/>
+	<position x="478" y="304"/>
+	<column name="ADMI_CEDULA" not-null="true">
+		<type name="integer" length="0"/>
+	</column>
+	<column name="ADMI_NOMBRE">
+		<type name="varchar" length="50"/>
+	</column>
+	<column name="ADMI_APELLIDO">
+		<type name="varchar" length="50"/>
+	</column>
+	<constraint name="ADMINISTRADOR_pk" type="pk-constr" table="public.&quot;ADMINISTRADOR&quot;">
+		<columns names="ADMI_CEDULA" ref-type="src-columns"/>
+	</constraint>
+</table>
+
+<table name="DETALLE_AREA" layer="0" collapse-mode="2" max-obj-count="3">
+	<schema name="public"/>
+	<role name="postgres"/>
+	<position x="367" y="485"/>
+	<column name="DET_CODIGO" not-null="true">
+		<type name="integer" length="0"/>
+	</column>
+	<column name="DET_DESCRIPCION">
+		<type name="varchar" length="0"/>
+	</column>
+	<constraint name="DETALLE_AREA_pk" type="pk-constr" table="public.&quot;DETALLE_AREA&quot;">
+		<columns names="DET_CODIGO" ref-type="src-columns"/>
+	</constraint>
+</table>
+
+<table name="ESTADO_REGISTRO" layer="0" collapse-mode="2" max-obj-count="3">
+	<schema name="public"/>
+	<role name="postgres"/>
+	<position x="406" y="286"/>
+	<column name="EST_CODIGO" not-null="true">
+		<type name="integer" length="0"/>
+	</column>
+	<column name="EST_DETALLE">
+		<type name="varchar" length="50"/>
+	</column>
+	<constraint name="ESTADO_REGISTRO_pk" type="pk-constr" table="public.&quot;ESTADO_REGISTRO&quot;">
+		<columns names="EST_CODIGO" ref-type="src-columns"/>
+	</constraint>
+</table>
+
+<table name="HIJO" layer="0" collapse-mode="2" max-obj-count="7">
+	<schema name="public"/>
+	<role name="postgres"/>
+	<position x="887" y="218"/>
+	<column name="HIJO_CODIGO" not-null="true">
+		<type name="integer" length="0"/>
+	</column>
+	<column name="HIJO_NOMBRE">
+		<type name="varchar" length="50"/>
+	</column>
+	<column name="HIJO_APELLIDO">
+		<type name="varchar" length="50"/>
+	</column>
+	<column name="HIJO_EDAD">
+		<type name="integer" length="0"/>
+	</column>
+	<constraint name="HIJO_pk" type="pk-constr" table="public.&quot;HIJO&quot;">
+		<columns names="HIJO_CODIGO" ref-type="src-columns"/>
+	</constraint>
+</table>
+
+<table name="VISITA" layer="0" collapse-mode="2" max-obj-count="4">
+	<schema name="public"/>
+	<role name="postgres"/>
+	<position x="682" y="254"/>
+	<column name="VIS_CODIGO" not-null="true">
+		<type name="integer" length="0"/>
+	</column>
+	<column name="VIS_FECHA">
+		<type name="date" length="0"/>
+	</column>
+	<constraint name="VISITA_pk" type="pk-constr" table="public.&quot;VISITA&quot;">
+		<columns names="VIS_CODIGO" ref-type="src-columns"/>
+	</constraint>
+</table>
+
+<table name="CONYUGUE" layer="0" collapse-mode="2" max-obj-count="4">
+	<schema name="public"/>
+	<role name="postgres"/>
+	<position x="789" y="459"/>
+	<column name="CON_CODIGO" not-null="true">
+		<type name="varchar" length="3"/>
+	</column>
+	<column name="CON_NOMBRE">
+		<type name="varchar" length="50"/>
+	</column>
+	<column name="CON_APELLIDO">
+		<type name="varchar" length="50"/>
+	</column>
+	<column name="CON_SUELDO">
+		<type name="varchar" length="50"/>
+	</column>
+	<constraint name="CONYUGUE_pk" type="pk-constr" table="public.&quot;CONYUGUE&quot;">
+		<columns names="CON_CODIGO" ref-type="src-columns"/>
+	</constraint>
+</table>
+
+<table name="PEDIDO_DIVORCIO" layer="0" collapse-mode="2" max-obj-count="6">
+	<schema name="public"/>
+	<role name="postgres"/>
+	<position x="1115" y="60"/>
+	<column name="DIV_CODIGO" not-null="true">
+		<type name="varchar" length="3"/>
+	</column>
+	<column name="DIV_DATE">
+		<type name="date" length="0"/>
+	</column>
+	<column name="DIV_PENSION">
+		<type name="float" length="0"/>
+	</column>
+	<column name="DIV_REGIMEN_VISITA">
+		<type name="varchar" length="50"/>
+	</column>
+	<constraint name="PEDIDO_DIVORCIO_pk" type="pk-constr" table="public.&quot;PEDIDO_DIVORCIO&quot;">
+		<columns names="DIV_CODIGO" ref-type="src-columns"/>
+	</constraint>
+</table>
+
+<relationship name="ADMINISTRADOR_has_many_AREA_REGISTRO" type="rel1n" layer="0"
+	 src-col-pattern="{sc}_{st}"
+	 pk-pattern="{dt}_pk" uq-pattern="{dt}_uq"
+	 src-fk-pattern="{st}_fk"
+	 custom-color="#261559"
+	 src-table="public.&quot;ADMINISTRADOR&quot;"
+	 dst-table="public.&quot;AREA_REGISTRO&quot;"
+	 src-required="true" dst-required="false">
+	<label ref-type="name-label">
+		<position x="-99.9975" y="-89.99"/>
+	</label>
+</relationship>
+
+<relationship name="AREA_REGISTRO_has_many_DETALLE_AREA" type="rel1n" layer="0"
+	 src-col-pattern="{sc}_{st}"
+	 pk-pattern="{dt}_pk" uq-pattern="{dt}_uq"
+	 src-fk-pattern="{st}_fk"
+	 custom-color="#4ab5b1"
+	 src-table="public.&quot;AREA_REGISTRO&quot;"
+	 dst-table="public.&quot;DETALLE_AREA&quot;"
+	 src-required="true" dst-required="false">
+	<label ref-type="name-label">
+		<position x="-193.569" y="-17.1857"/>
+	</label>
+</relationship>
+
+<relationship name="AREA_REGISTRO_has_many_USUARIO" type="rel1n" layer="0"
+	 src-col-pattern="{sc}_{st}"
+	 pk-pattern="{dt}_pk" uq-pattern="{dt}_uq"
+	 src-fk-pattern="{st}_fk"
+	 custom-color="#d99194"
+	 src-table="public.&quot;AREA_REGISTRO&quot;"
+	 dst-table="public.&quot;USUARIO&quot;"
+	 src-required="true" dst-required="false"/>
+
+<relationship name="DETALLE_AREA_has_many_ESTADO_REGISTRO" type="rel1n" layer="0"
+	 src-col-pattern="{sc}_{st}"
+	 pk-pattern="{dt}_pk" uq-pattern="{dt}_uq"
+	 src-fk-pattern="{st}_fk"
+	 custom-color="#6bff04"
+	 src-table="public.&quot;DETALLE_AREA&quot;"
+	 dst-table="public.&quot;ESTADO_REGISTRO&quot;"
+	 src-required="true" dst-required="false">
+	<label ref-type="name-label">
+		<position x="-3.56908" y="-16.1857"/>
+	</label>
+</relationship>
+
+<relationship name="USUARIO_has_many_VISITA" type="rel1n" layer="0"
+	 src-col-pattern="{sc}_{st}"
+	 pk-pattern="{dt}_pk" uq-pattern="{dt}_uq"
+	 src-fk-pattern="{st}_fk"
+	 custom-color="#b05ce9"
+	 src-table="public.&quot;USUARIO&quot;"
+	 dst-table="public.&quot;VISITA&quot;"
+	 src-required="true" dst-required="false"/>
+
+<relationship name="ESTADO_REGISTRO_has_many_VISITA" type="rel1n" layer="0"
+	 src-col-pattern="{sc}_{st}"
+	 pk-pattern="{dt}_pk" uq-pattern="{dt}_uq"
+	 src-fk-pattern="{st}_fk"
+	 custom-color="#cca007"
+	 src-table="public.&quot;ESTADO_REGISTRO&quot;"
+	 dst-table="public.&quot;VISITA&quot;"
+	 src-required="true" dst-required="false">
+	<label ref-type="name-label">
+		<position x="-89.5691" y="19.5862"/>
+	</label>
+</relationship>
+
+<relationship name="USUARIO_has_many_HIJO" type="rel1n" layer="0"
+	 src-col-pattern="{sc}_{st}"
+	 pk-pattern="{dt}_pk" uq-pattern="{dt}_uq"
+	 src-fk-pattern="{st}_fk"
+	 custom-color="#d16212"
+	 src-table="public.&quot;USUARIO&quot;"
+	 dst-table="public.&quot;HIJO&quot;"
+	 src-required="true" dst-required="false">
+	<label ref-type="name-label">
+		<position x="113.869" y="-13.5857"/>
+	</label>
+</relationship>
+
+<relationship name="CONYUGUE_has_many_HIJO" type="rel1n" layer="0"
+	 src-col-pattern="{sc}_{st}"
+	 pk-pattern="{dt}_pk" uq-pattern="{dt}_uq"
+	 src-fk-pattern="{st}_fk"
+	 custom-color="#ee5bc1"
+	 src-table="public.&quot;CONYUGUE&quot;"
+	 dst-table="public.&quot;HIJO&quot;"
+	 src-required="true" dst-required="false">
+	<label ref-type="name-label">
+		<position x="106.22" y="-14.3857"/>
+	</label>
+</relationship>
+
+<relationship name="USUARIO_has_many_PEDIDO_DIVORCIO" type="rel1n" layer="0"
+	 src-col-pattern="{sc}_{st}"
+	 pk-pattern="{dt}_pk" uq-pattern="{dt}_uq"
+	 src-fk-pattern="{st}_fk"
+	 custom-color="#e4d531"
+	 src-table="public.&quot;USUARIO&quot;"
+	 dst-table="public.&quot;PEDIDO_DIVORCIO&quot;"
+	 src-required="true" dst-required="false"/>
+
+<relationship name="AREA_REGISTRO_has_many_EMPLEADO" type="rel1n" layer="0"
+	 src-col-pattern="{sc}_{st}"
+	 pk-pattern="{dt}_pk" uq-pattern="{dt}_uq"
+	 src-fk-pattern="{st}_fk"
+	 custom-color="#762f05"
+	 src-table="public.&quot;AREA_REGISTRO&quot;"
+	 dst-table="public.&quot;EMPLEADO&quot;"
+	 src-required="true" dst-required="false">
+	<label ref-type="name-label">
+		<position x="-19.7363" y="-14.1857"/>
+	</label>
+</relationship>
+
+<relationship name="DETALLE_AREA_has_many_EMPLEADO" type="rel1n" layer="0"
+	 src-col-pattern="{sc}_{st}"
+	 pk-pattern="{dt}_pk" uq-pattern="{dt}_uq"
+	 src-fk-pattern="{st}_fk"
+	 custom-color="#5403a2"
+	 src-table="public.&quot;DETALLE_AREA&quot;"
+	 dst-table="public.&quot;EMPLEADO&quot;"
+	 src-required="true" dst-required="false">
+	<label ref-type="name-label">
+		<position x="-64.5691" y="15.4143"/>
+	</label>
+</relationship>
+
+</dbmodel>
